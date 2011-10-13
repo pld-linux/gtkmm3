@@ -29,7 +29,9 @@ BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
 Requires:	atkmm >= 2.22.2
 Requires:	cairomm >= 1.9.2
+Requires:	gdk-pixbuf2 >= 2.22.1
 Requires:	glibmm >= %{glibmm_ver}
+Requires:	gtk+3 >= 3.2.0
 Requires:	pangomm >= 2.28.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,6 +54,8 @@ Summary(pl.UTF-8):	Pliki nagłówkowe gtkmm i gdkmm
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	atkmm-devel >= 2.22.2
+Requires:	cairomm-devel >= 1.9.2
+Requires:	gdk-pixbuf2-devel >= 2.22.1
 Requires:	glibmm-devel >= %{glibmm_ver}
 Requires:	gtk+3-devel >= 3.2.0
 Requires:	pangomm-devel >= 2.28.0
