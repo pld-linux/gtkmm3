@@ -2,16 +2,17 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static libraries
 #
-%define		glibmm_ver 2.36.0
+%define		glibmm_ver	2.38.0
+%define		gtk3_ver	3.10.0
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
 Name:		gtkmm3
-Version:	3.8.1
+Version:	3.10.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.8/gtkmm-%{version}.tar.xz
-# Source0-md5:	15211fab12ea2ce955369dcc320baf5c
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.10/gtkmm-%{version}.tar.xz
+# Source0-md5:	45f765a1150ff7fc3ce0f474309fa52a
 URL:		http://www.gtkmm.org/
 BuildRequires:	atkmm-devel >= 2.22.2
 BuildRequires:	autoconf >= 2.59
@@ -19,7 +20,7 @@ BuildRequires:	automake >= 1:1.11
 BuildRequires:	cairomm-devel >= 1.9.2
 BuildRequires:	gdk-pixbuf2-devel >= 2.22.1
 BuildRequires:	glibmm-devel >= %{glibmm_ver}
-BuildRequires:	gtk+3-devel >= 3.8.0
+BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	libsigc++-devel
 BuildRequires:	libstdc++-devel >= 5:3.3.1
 BuildRequires:	libtool >= 2:2.0
@@ -33,7 +34,7 @@ Requires:	atkmm >= 2.22.2
 Requires:	cairomm >= 1.9.2
 Requires:	gdk-pixbuf2 >= 2.22.1
 Requires:	glibmm >= %{glibmm_ver}
-Requires:	gtk+3 >= 3.8.0
+Requires:	gtk+3 >= %{gtk3_ver}
 Requires:	pangomm >= 2.28.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,7 +60,7 @@ Requires:	atkmm-devel >= 2.22.2
 Requires:	cairomm-devel >= 1.9.2
 Requires:	gdk-pixbuf2-devel >= 2.22.1
 Requires:	glibmm-devel >= %{glibmm_ver}
-Requires:	gtk+3-devel >= 3.8.0
+Requires:	gtk+3-devel >= %{gtk3_ver}
 Requires:	pangomm-devel >= 2.28.0
 
 %description devel
