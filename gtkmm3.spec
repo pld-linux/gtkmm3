@@ -1,14 +1,14 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static libraries
-#
+
 %define		glibmm_ver	2.38.0
 %define		gtk3_ver	3.10.0
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
 Name:		gtkmm3
 Version:	3.10.1
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.10/gtkmm-%{version}.tar.xz
@@ -86,6 +86,9 @@ Summary:	Reference documentation for gtkmm and gdkmm
 Summary(pl.UTF-8):	Szczegółowa dokumentacja gtkmm i gdkmm
 Group:		Documentation
 Requires:	devhelp
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 Reference documentation for gtkmm and gdkmm.
