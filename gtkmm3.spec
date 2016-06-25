@@ -2,19 +2,21 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static libraries
 
-%define		glibmm_ver	2.46.1
-%define		gtk3_ver	3.18.0
+%define		atkmm_ver	2.24.2
+%define		glibmm_ver	2.48.0
+%define		gtk3_ver	3.20.0
+%define		pangomm_ver	2.38.2
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
 Name:		gtkmm3
-Version:	3.18.0
+Version:	3.20.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.18/gtkmm-%{version}.tar.xz
-# Source0-md5:	1f056682a0ffbe8b8678be79b69f7169
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.20/gtkmm-%{version}.tar.xz
+# Source0-md5:	c08b2548f4e900e7a0299b76d6c86a13
 URL:		http://www.gtkmm.org/
-BuildRequires:	atkmm-devel >= 2.24.1
+BuildRequires:	atkmm-devel >= %{atkmm_ver}
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	cairomm-devel >= 1.12.0
@@ -25,18 +27,18 @@ BuildRequires:	libepoxy-devel >= 1.2
 BuildRequires:	libsigc++-devel
 BuildRequires:	libstdc++-devel >= 6:4.6
 BuildRequires:	libtool >= 2:2.0
-BuildRequires:	mm-common >= 0.9.8
-BuildRequires:	pangomm-devel >= 2.38.1
+BuildRequires:	mm-common >= 0.9.10
+BuildRequires:	pangomm-devel >= %{pangomm_ver}
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires:	atkmm >= 2.24.1
+Requires:	atkmm >= %{atkmm_ver}
 Requires:	cairomm >= 1.12.0
 Requires:	gdk-pixbuf2 >= 2.26.0
 Requires:	glibmm >= %{glibmm_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
-Requires:	pangomm >= 2.38.1
+Requires:	pangomm >= %{pangomm_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -57,13 +59,13 @@ Summary:	gtkmm and gdkmm header files
 Summary(pl.UTF-8):	Pliki nagłówkowe gtkmm i gdkmm
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	atkmm-devel >= 2.24.1
+Requires:	atkmm-devel >= %{atkmm_ver}
 Requires:	cairomm-devel >= 1.12.0
 Requires:	gdk-pixbuf2-devel >= 2.26.0
 Requires:	glibmm-devel >= %{glibmm_ver}
 Requires:	gtk+3-devel >= %{gtk3_ver}
 Requires:	libstdc++-devel >= 6:4.6
-Requires:	pangomm-devel >= 2.38.1
+Requires:	pangomm-devel >= %{pangomm_ver}
 
 %description devel
 Header files for gtkmm library.
