@@ -3,24 +3,24 @@
 %bcond_without	static_libs	# don't build static libraries
 
 %define		atkmm_ver	2.24.2
-%define		glibmm_ver	2.48.0
-%define		gtk3_ver	3.20.0
+%define		glibmm_ver	2.50.0
+%define		gtk3_ver	3.22.0
 %define		pangomm_ver	2.38.2
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
 Name:		gtkmm3
-Version:	3.20.1
+Version:	3.22.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.20/gtkmm-%{version}.tar.xz
-# Source0-md5:	c08b2548f4e900e7a0299b76d6c86a13
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.22/gtkmm-%{version}.tar.xz
+# Source0-md5:	9bdd3bfefaa4d3b68ea57456a75c4a12
 URL:		http://www.gtkmm.org/
 BuildRequires:	atkmm-devel >= %{atkmm_ver}
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	cairomm-devel >= 1.12.0
-BuildRequires:	gdk-pixbuf2-devel >= 2.26.0
+BuildRequires:	gdk-pixbuf2-devel >= 2.36.0
 BuildRequires:	glibmm-devel >= %{glibmm_ver}
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	libepoxy-devel >= 1.2
@@ -35,7 +35,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	atkmm >= %{atkmm_ver}
 Requires:	cairomm >= 1.12.0
-Requires:	gdk-pixbuf2 >= 2.26.0
+Requires:	gdk-pixbuf2 >= 2.36.0
 Requires:	glibmm >= %{glibmm_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
 Requires:	pangomm >= %{pangomm_ver}
@@ -61,7 +61,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	atkmm-devel >= %{atkmm_ver}
 Requires:	cairomm-devel >= 1.12.0
-Requires:	gdk-pixbuf2-devel >= 2.26.0
+Requires:	gdk-pixbuf2-devel >= 2.36.0
 Requires:	glibmm-devel >= %{glibmm_ver}
 Requires:	gtk+3-devel >= %{gtk3_ver}
 Requires:	libstdc++-devel >= 6:4.6
@@ -110,6 +110,7 @@ Szczegółowa dokumentacja gtkmm i gdkmm.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	%{?with_static_libs:--enable-static}
 
 %{__make}
