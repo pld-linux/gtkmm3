@@ -9,12 +9,12 @@
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
 Name:		gtkmm3
-Version:	3.22.1
+Version:	3.22.2
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.22/gtkmm-%{version}.tar.xz
-# Source0-md5:	183079917fbe78e5aef204d5e52eafc1
+# Source0-md5:	883e9046768b3a5afc8e365988823e77
 URL:		http://www.gtkmm.org/
 BuildRequires:	atkmm-devel >= %{atkmm_ver}
 BuildRequires:	autoconf >= 2.59
@@ -25,7 +25,7 @@ BuildRequires:	glibmm-devel >= %{glibmm_ver}
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	libepoxy-devel >= 1.2
 BuildRequires:	libsigc++-devel
-BuildRequires:	libstdc++-devel >= 6:4.6
+BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	pangomm-devel >= %{pangomm_ver}
