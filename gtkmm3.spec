@@ -3,8 +3,8 @@
 %bcond_without	static_libs	# don't build static libraries
 
 %define		atkmm_ver	2.24.2
-%define		glibmm_ver	2.50.0
-%define		gtk3_ver	3.22.0
+%define		glibmm_ver	2.54.0
+%define		gtk3_ver	3.24.0
 %define		pangomm_ver	2.38.2
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
