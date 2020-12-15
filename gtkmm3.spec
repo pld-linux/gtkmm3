@@ -9,17 +9,18 @@
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
 Name:		gtkmm3
-Version:	3.24.2
+Version:	3.24.3
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.24/gtkmm-%{version}.tar.xz
-# Source0-md5:	e311db484ca9c53f1689d35f5f58a06b
+Source0:	https://download.gnome.org/sources/gtkmm/3.24/gtkmm-%{version}.tar.xz
+# Source0-md5:	9a9a00bcd634e3eca0b101809f2eae02
 URL:		https://www.gtkmm.org/
 BuildRequires:	atkmm-devel >= %{atkmm_ver}
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	cairomm-devel >= 1.12.0
+BuildRequires:	doxygen >= 1:1.8.9
 BuildRequires:	gdk-pixbuf2-devel >= 2.36.0
 BuildRequires:	glibmm-devel >= %{glibmm_ver}
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
@@ -31,6 +32,7 @@ BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	pangomm-devel >= %{pangomm_ver}
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	atkmm >= %{atkmm_ver}
@@ -90,9 +92,7 @@ Summary:	Reference documentation for gtkmm and gdkmm
 Summary(pl.UTF-8):	Szczegółowa dokumentacja gtkmm i gdkmm
 Group:		Documentation
 Requires:	devhelp
-%if "%{_rpmversion}" >= "5"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description apidocs
 Reference documentation for gtkmm and gdkmm.
@@ -103,13 +103,20 @@ Szczegółowa dokumentacja gtkmm i gdkmm.
 %prep
 %setup -q -n gtkmm-%{version}
 
+# missing in release tarball, not needed for Linux
+mkdir win32_installer
+touch win32_installer/filelist.am \
+	win32_installer/gtkmm-installer.nsi.in
+
 %build
+mm-common-prepare --copy --force
 %{__libtoolize}
 %{__aclocal} -I build
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure \
+	--enable-maintainer-mode \
 	--disable-silent-rules \
 	%{?with_static_libs:--enable-static}
 
