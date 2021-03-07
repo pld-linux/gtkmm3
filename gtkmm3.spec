@@ -92,7 +92,7 @@ Summary:	Reference documentation for gtkmm and gdkmm
 Summary(pl.UTF-8):	Szczegółowa dokumentacja gtkmm i gdkmm
 Group:		Documentation
 Requires:	devhelp
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 Reference documentation for gtkmm and gdkmm.
