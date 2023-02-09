@@ -23,6 +23,7 @@ BuildRequires:	cairomm-devel >= 1.12.0
 BuildRequires:	doxygen >= 1:1.8.9
 BuildRequires:	gdk-pixbuf2-devel >= 2.36.0
 BuildRequires:	glibmm-devel >= %{glibmm_ver}
+BuildRequires:	graphviz
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	libepoxy-devel >= 1.2
 BuildRequires:	libsigc++-devel
