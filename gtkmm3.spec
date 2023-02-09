@@ -29,6 +29,7 @@ BuildRequires:	libepoxy-devel >= 1.2
 BuildRequires:	libsigc++-devel
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2.0
+BuildRequires:	libxslt-progs
 BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	pangomm-devel >= %{pangomm_ver}
 BuildRequires:	perl-base >= 1:5.6.0
