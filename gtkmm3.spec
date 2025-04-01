@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# don't build static libraries
+%bcond_without	static_libs	# static libraries
 
 %define		atkmm_ver	2.24.2
 %define		glibmm_ver	2.54.0
@@ -9,13 +9,13 @@
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
 Name:		gtkmm3
-Version:	3.24.9
+Version:	3.24.10
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	https://download.gnome.org/sources/gtkmm/3.24/gtkmm-%{version}.tar.xz
-# Source0-md5:	47871a7973e186c1189b2145b507de15
-URL:		https://www.gtkmm.org/
+# Source0-md5:	164231e1ad76b84e0b7a98f9476e244f
+URL:		https://gtkmm.gnome.org/
 BuildRequires:	atkmm-devel >= %{atkmm_ver}
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
