@@ -9,12 +9,12 @@
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Wrapper C++ dla GTK+
 Name:		gtkmm3
-Version:	3.24.10
+Version:	3.24.11
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	https://download.gnome.org/sources/gtkmm/3.24/gtkmm-%{version}.tar.xz
-# Source0-md5:	164231e1ad76b84e0b7a98f9476e244f
+# Source0-md5:	554154811621e1e411285dde09ca8913
 URL:		https://gtkmm.gnome.org/
 BuildRequires:	atkmm-devel >= %{atkmm_ver}
 BuildRequires:	autoconf >= 2.59
@@ -142,15 +142,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README.md
-%attr(755,root,root) %{_libdir}/libgdkmm-3.0.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgdkmm-3.0.so.1
-%attr(755,root,root) %{_libdir}/libgtkmm-3.0.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgtkmm-3.0.so.1
+%{_libdir}/libgdkmm-3.0.so.*.*.*
+%ghost %{_libdir}/libgdkmm-3.0.so.1
+%{_libdir}/libgtkmm-3.0.so.*.*.*
+%ghost %{_libdir}/libgtkmm-3.0.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libgdkmm-3.0.so
-%attr(755,root,root) %{_libdir}/libgtkmm-3.0.so
+%{_libdir}/libgdkmm-3.0.so
+%{_libdir}/libgtkmm-3.0.so
 %{_libdir}/gdkmm-3.0
 %{_libdir}/gtkmm-3.0
 %{_includedir}/gdkmm-3.0
